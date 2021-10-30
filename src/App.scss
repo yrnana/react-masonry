@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+    background: rgb(139, 92, 246, 0.5);
+    &:last-child {
+      margin-right: 0;
+    }
+    &.selected {
+      background: rgb(139, 92, 246);
+      box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+        rgb(196, 181, 253) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    }
+  }
+}
+
+.grid {
+  background: #eee;
+  // max-width: 1200px;
+  &:after {
+    content: ' ';
+    display: block;
+  }
+}
+
+.grid-sizer,
+.grid-item {
+  width: 25%;
+}
+
+.grid-item {
+  float: left;
+  img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+}
